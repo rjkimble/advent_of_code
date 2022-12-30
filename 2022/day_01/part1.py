@@ -5,6 +5,7 @@ from argparse import ArgumentParser
 
 
 def get_args():
+    """Reads the arguments from the command line."""
     parser = ArgumentParser()
     parser.add_argument('input', metavar='INPUT', type=open,
         help='File containing the puzzle input.')

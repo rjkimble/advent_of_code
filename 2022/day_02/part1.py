@@ -5,25 +5,28 @@ from argparse import ArgumentParser
 
 
 def get_args():
+    """Reads the arguments from the command line."""
     parser = ArgumentParser()
     parser.add_argument('input', metavar='INPUT', type=open,
         help='File containing the puzzle input.')
     return parser.parse_args()
 
 
+def score(opp, you):
+    """Computes the score of a single round."""
+    choice = {'X':1, 'Y':2, 'Z':3, 'A':1, 'B':2, 'C':3}
+    return choice[you] + 3 * (((1 + choice[you] - choice[opp]) % 3))
+    
+    
 def main():
     args = get_args()
     # Read the input file:
     data = args.input.read()
-    # Split into individual calorie lists:
-    cal = data.split('\n\n')
-    # Compute individual calorie entries as lists of integers:
-    cal2 = [list(map(int, row.split())) for row in cal]
-    # Sum each list to compute calorie totals:
-    cal3 = [sum(row) for row in cal2]
-    # Find the maxiumum entry:
-    answer = max(cal3)
-    # Print it:
+    # Read the "strategy guide":
+    sg = [line.split() for line in data.splitlines()]
+    # Compute the total score (the sum of the scores of the indiidual rounds):
+    answer = sum([score(*row) for row in sg])
+    # Print the answer:
     print(answer)
     return
 
