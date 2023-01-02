@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-"""Solves part 2 of the day 5 puzzle of the 2022 Advent of Code challenge."""
+"""Solves part 2 of the day 6 puzzle of the 2022 Advent of Code challenge."""
 
 
 from part1 import get_args, read_data
-
 
 
 def main():
