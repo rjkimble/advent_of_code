@@ -1,0 +1,7 @@
+To generate the answer for part 1, run the following command:
+
+python part1.py <input file name>
+
+where <input file name> is input.txt for the actual puzzle data or sample.txt for the sample data.
+
+To generate the answer for part 2, run part2.py instead of part1.py.
