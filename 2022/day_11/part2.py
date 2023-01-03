@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Solves part 2 of the day 10 puzzle of the 2022 Advent of Code challenge."""
+"""Solves part 2 of the day 11 puzzle of the 2022 Advent of Code challenge."""
 
 
 from part1 import get_args, read_data, times, plus, monkey, create_monkeys
