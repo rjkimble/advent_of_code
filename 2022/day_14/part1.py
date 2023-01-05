@@ -2,7 +2,6 @@
 """Solves part 1 of the day 14 puzzle of the 2022 Advent of Code challenge."""
 
 from argparse import ArgumentParser
-from json import loads
 
 
 def get_args():
@@ -38,6 +37,7 @@ def get_rocks(start, finish):
 
 
 def drop_sand(rocks, filled, bottom):
+    """Drops the sand."""
     falling = True
     sandx, sandy = 500, 0
     while falling:
