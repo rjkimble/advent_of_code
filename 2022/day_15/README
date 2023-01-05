@@ -1,0 +1,9 @@
+To generate the answer for part 1, run the following command:
+
+python part1.py <input file name> Y
+
+where <input file name> Y is input.txt 2000000 for the actual puzzle data or 
+sample.txt 10 for the sample data.
+
+To generate the answer for part 2, run part2.py instead of part1.py and use 
+input.txt 4000000 or sample.txt 20, respectively.
