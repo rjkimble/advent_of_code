@@ -1,0 +1,27 @@
+To generate the answer for part 1, run the following command:
+
+python part1.py <input file name>
+
+where <input file name> is input.txt for the actual puzzle data or sample.txt for the sample data.
+
+To generate the answer for part 2, run part2.py instead of part1.py.
+
+Notes:
+
+1. Although it's important to use all the valves to compute the shortest paths, 
+   only those with positive flow rates are important when considering routhes
+   through the cave. The only distances of importance are therefore the
+   distances between these valves, which I have characterized as "worth opening."
+
+2. For part 2, I split the "worth opening" valves in half. For the elephant, 
+   importance I consider all paths that contained up to one half the number of 
+   such valves. For each set of worth opening valves in those paths, I store the
+   best result. After storing all those results, I then compute the pressure
+   relief for each path that contains the remaining worth opening valves. I add
+   the two values and record the best result.
+
+3. The above strategy isn't guaranteed to achieve the correct result, but it's
+   highly likely that it will. I simply took the best result found and submitted
+   that for the answer. If it was accepted as the correct answer, I just left it
+   at that. Not ideal, but I'm just looking to find the correct solution and move
+   on.
