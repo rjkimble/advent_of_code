@@ -1,0 +1,44 @@
+To generate the answer for part 1, run the following command:
+
+python part1.py <input file name>
+
+where <input file name> is input.txt for the actual puzzle data or sample.txt for the sample data.
+
+To generate the answer for part 2, run part2.py instead of part1.py.
+
+Part 1 is a pretty straightforward implementation of the puzzle directions.
+When I started working on it, I implemented the floor as an afterthought. In 
+order to fit into the rest of the structure I created, I had to make its height
+-1. That's why I have to add 1 to the final height after all the rocks have 
+been dropped.
+
+Part 2 is exactly the same as part 1 except for a few minor differences. First,
+in order to make the final computation for the 1000000000000 rocks, I have to
+determine the relationship between the number of rocks dropped and the height
+after each one. To that end, I record the number of rocks dropped and the height
+at after each for a million rocks. A million is probably more than I really need,
+but the algorithm runs quickly enough that I elected to record that many
+observations. It's a basic mathematical principle, for reasons I won't discuss
+here, that the patterns at the top are going to repeat after some finite number
+of moves, and that number will be determined by the lenght of the jet gas pushes.
+Because of that, I was fairly confident that the cycle would be less than a few
+thousand drops. I recorded a million to ensure that the pattern at the top of
+the cave had entered a repetitive cycle.
+
+The simplest way I saw to determine the length of that cycle was to compute the
+height differences between each rock and the next, and then look for repetitions
+in that sequence. I elected to look at the differences in the top 20 heights, 
+and then look for that sequence earlier. I made a list of all the matches I found
+in the last 100000 drops and recorded the indices where they appeared. I chose
+the index of the end of the 20 height sequence.
+
+Then using my differences approach, I look at the differences bewteen adjacent
+indices in order to confirm they repeated after a fixed number of drops. I then 
+use that fixed number to figure for what index the cycle will repeat itself after
+1000000000000 rocks. I also use the recorded heights to dertermine how much the
+height increases after each repetition interval. From those computations I am able
+to compute the height after 1000000000000 rocks, and that's the answer I print.
+
+My program for part 2 runs in a minute or two. I'm sure I could make it faster, 
+but I don't see the point of doing so. I'd be interested to know if somebody has
+a slicker approach, however.
