@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Solves part 2 of the day 18 puzzle of the 2022 Advent of Code challenge."""
+"""Solves part 2 of the day 20 puzzle of the 2022 Advent of Code challenge."""
 
 
 from part1 import get_args, read_data, deque

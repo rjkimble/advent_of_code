@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Solves part 1 of the day 18 puzzle of the 2022 Advent of Code challenge."""
+"""Solves part 1 of the day 20 puzzle of the 2022 Advent of Code challenge."""
 
 from argparse import ArgumentParser
 from collections import deque
