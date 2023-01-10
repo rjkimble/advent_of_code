@@ -1,0 +1,38 @@
+To generate the answer for part 1, run the following command:
+
+python part1.py <input file name>
+
+where <input file name> is input.txt for the actual puzzle data or sample.txt for the sample data.
+
+To generate the answer for part 2, run part2.py instead of part1.py.
+
+Notes:
+
+Part 1 is pretty straightforward. First I populate an "array" that maps the 
+coordinates of each position on the map to the character at that position ('.'
+or '#'). Then I compute the left, right, top, and bottom rows and columns for 
+each position in order to compute the path. Then I look at each position and
+determine the next position when moved in each cardinal direction. If the
+position is at the edge in a particular direction, then the next position is
+determined by wrapping around as indicated in the puzzle description. If the
+path is blocked in a particular direction, then the next position is just that
+position. The next position also includes the direction. To follow the complete
+path, we merely start at the first position and then walk the number of steps
+in the indicated direction by successively updating the current position using
+the "next" computations. At the start of each path segment, the direction is 
+changed according to the turn indicated.
+
+Part 2 is a bit trickier. Here the next positions are initially set the sample
+way as in part 1, except that when the edge is reached, the next position is
+simply set to the same position and direction as the current position and 
+direction. Then using some extra data provided in the imported packages, we
+update the next positions for each of the edges, keeping in mind how the 
+direction changes when wrapping around the edge. The imported data contains the
+information we need to make those adjusments to the "next" dictionary. Again,
+following the map then proceeds simply by setting the current position and
+direction to the starting position and direction and then following the path
+using the "next" dictionary.
+
+Part 1 is written in a fairly generic way, but part 2 requires a bit of analysis
+of how the wrapping around to a cube affects the path. Each puzzle is going to
+have to be considered when adjusting part 2 code for the input data.
